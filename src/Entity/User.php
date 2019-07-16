@@ -46,7 +46,7 @@ class User implements UserInterface
     private $job;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
@@ -172,7 +172,7 @@ class User implements UserInterface
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -199,23 +199,23 @@ class User implements UserInterface
         return $this->pictures;
     }
 
-    public function addCircus(Picture $circus): self
+    public function addPicture(Picture $picture): self
     {
-        if (!$this->pictures->contains($circus)) {
-            $this->pictures[] = $circus;
-            $circus->setUser($this);
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeCircus(Picture $circus): self
+    public function removePicture(Picture $picture): self
     {
-        if ($this->pictures->contains($circus)) {
-            $this->pictures->removeElement($circus);
+        if ($this->pictures->contains($picture)) {
+            $this->pictures->removeElement($picture);
             // set the owning side to null (unless already changed)
-            if ($circus->getUser() === $this) {
-                $circus->setUser(null);
+            if ($picture->getUser() === $this) {
+                $picture->setUser(null);
             }
         }
 

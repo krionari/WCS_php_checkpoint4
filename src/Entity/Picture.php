@@ -27,12 +27,12 @@ class Picture
     private $url;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\user", inversedBy="circus")
+     * @ORM\ManyToOne(targetEntity="App\Entity\user", inversedBy="pictures")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\circus", inversedBy="pictures")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Circus", inversedBy="pictures")
      */
     private $circus;
 
