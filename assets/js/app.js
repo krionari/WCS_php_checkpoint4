@@ -11,6 +11,7 @@ require('../css/app.scss');
 require('../css/artist.scss');
 require('../css/nav.scss');
 require('../css/footer.scss');
+require('../css/home.scss');
 
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
