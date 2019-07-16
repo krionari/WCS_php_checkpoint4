@@ -40,5 +40,5 @@ security:
         ROLE_ADMIN: ROLE_ARTIST
 
     access_control:
-        - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

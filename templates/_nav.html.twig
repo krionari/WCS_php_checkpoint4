@@ -20,26 +20,33 @@
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('artist_index') }}">Artists</a>
-            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item vertical-line">
+                    <a class="nav-link" href="{{ path('user_index') }}">Artist management</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('artist_index') }}">Artists</a>
+                </li>
+            {% endif %}
             <li class="nav-item">
                 <a class="nav-link" href="#">Circus</a>
             </li>
             <li class="nav-item vertical-line">
                 <a class="nav-link" href="#">booking</a>
             </li>
-            <li class="nav-item vertical-line">
-                <a class="nav-link" href="#">Touring</a>
-            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item vertical-line">
+                    <a class="nav-link" href="{{ path('tour_index') }}">Touring management</a>
+                </li>
+            {% else %}
+                <li class="nav-item vertical-line">
+                    <a class="nav-link" href="{{ path('touring_index') }}">Touring</a>
+                </li>
+            {% endif %}
             <li class="nav-item vertical-line">
                 <a class="nav-link" href="{{ path('contact_index') }}">Contact</a>
             </li>
-            {% if is_granted('ROLE_ADMIN') %}
-            <li class="nav-item vertical-line">
-                <a class="nav-link" href="{{ path('user_index') }}">Artist management</a>
-            </li>
-            {% endif %}
             {% if app.user %}
                 <li class="nav-item vertical-line">
                     <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>

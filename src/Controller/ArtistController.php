@@ -29,6 +29,6 @@ class ArtistController extends AbstractController
 
         $artists = $userRepository->findBy(['role' => 'artist']);
 
-        return $this->render('artist/index.html.twig', ['artists' => $artists]);
+        return $this->render('user/index.html.twig', ['artists' => $artists]);
     }
 }
