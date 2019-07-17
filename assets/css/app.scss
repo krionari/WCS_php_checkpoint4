@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Henny+Penny&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nosifer&display=swap');
 
 
 body{
@@ -12,15 +13,23 @@ body{
     padding-bottom: 130px;
 }
 
-p , h1 {
+p {
     font-family: 'Henny Penny', cursive;
 }
 
 h1 {
+    font-family: 'Nosifer', cursive;
     margin-bottom: 80px;
     text-align: center;
     font-size: 4em;
     font-weight: bold;
+    color: #7E3924;
+}
+
+@media screen and (max-width: 370px) {
+    h1{
+        font-size: 1.9em;
+    }
 }
 
 p {

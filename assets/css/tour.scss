@@ -1,0 +1,28 @@
+.card-text-tour {
+  font-size: 3em;
+  text-align: center;
+}
+
+.card-title-tour {
+  font-size: 2em;
+  text-align: center;
+}
+
+.card-subtitle-tour {
+  font-size: 2em;
+  text-align: center;
+}
+
+.card-tour {
+  background-color: #CF7A55;
+  border: 3px double #C52B3C;
+  border-radius: 29px;
+  min-width: 400px;
+
+}
+
+@media screen and (max-width: 370px) {
+  .card-tour {
+    min-width: 30px;
+  }
+}

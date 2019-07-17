@@ -3,9 +3,9 @@
 {% block title %}Artist index{% endblock %}
 
 {% block body %}
-    <h1>Artist index</h1>
+    <h1>Our magnificent artist troop</h1>
 
-        <div class="row">
+        <div class="row ">
             {% for artist in artists %}
                 <div class="card-artist col-12 col-md-6 mb-5">
                     <div class="card card-article text-center">
@@ -17,7 +17,7 @@
                             <img src="{{asset('uploads/avatar/' ~ artist.urlavatar )}}" class="img-fluid img-cards-index" alt="Responsive image">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{ artist.artistname }}</h5>
+                            <h5 class="card-title-artist">{{ artist.artistname }}</h5>
                             <p class="card-text">{{ artist.description }}</p>
                         </div>
                     </div>

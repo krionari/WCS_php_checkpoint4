@@ -26,9 +26,15 @@ class ContactController extends AbstractController
     {
         $defaultData = ['message' => 'Type your message here'];
         $form = $this->createFormBuilder($defaultData)
-            ->add('name', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('message', TextareaType::class)
+            ->add('name', TextType::class, [
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('email', EmailType::class, [
+                'attr' => ['class' => 'form-control'],
+            ])
+            ->add('message', TextareaType::class, [
+                'attr' => ['class' => 'form-control'],
+            ])
             ->getForm();
 
         $form->handleRequest($request);
