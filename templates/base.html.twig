@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}Wild Circus 2.0{% endblock %}</title>
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -17,7 +18,11 @@
         </div>
     {% endfor %}
 {% endfor %}
+
+<div class="container-fluid padding-body">
 {% block body %}{% endblock %}
+</div>
+
 {% include '_footer.html.twig' %}
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}

@@ -2,7 +2,7 @@
 
     <!-- Navbar brand -->
 
-    <img class="logo" alt="Logo" src="{{ asset('build/images/logoYvard.png') }}">
+    <img class="logo" alt="Logo" src="{{asset('build/images/lolgo.png' )}}">
     <a class="navbar-brand" href="#">Wild Circus</a>
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -15,14 +15,14 @@
 
         <!-- Links -->
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('home_index') }}">Acceuil
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('home_index') }}">Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item vertical-line">
-                    <a class="nav-link" href="{{ path('user_index') }}">Artist management</a>
+                    <a class="nav-link" style="color: #eacb6c" href="{{ path('user_index') }}">Artist management</a>
                 </li>
             {% else %}
                 <li class="nav-item">
@@ -37,7 +37,7 @@
             </li>
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item vertical-line">
-                    <a class="nav-link" href="{{ path('tour_index') }}">Touring management</a>
+                    <a class="nav-link link-admin" style="color: #eacb6c" href="{{ path('tour_index') }}">Touring management</a>
                 </li>
             {% else %}
                 <li class="nav-item vertical-line">

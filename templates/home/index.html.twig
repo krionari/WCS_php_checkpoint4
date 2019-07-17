@@ -2,19 +2,25 @@
 {% block body %}
 
     <h1>Welcome to a new stage of hell circus</h1>
-
-    <div class="text-center">
-        <img src="{{asset('build/images/wildCircusHome.jpg' )}}" class="img-fluid img-home" alt="Responsive image">
+    <div class="row block-image-home">
+        <div class="col-3">
+            <img src="{{asset('build/images/flamme1.png' )}}" class="img-fluid img-flame1" alt="Responsive image">
+        </div>
+        <div class="col-6">
+            <img src="{{asset('build/images/wildCircusHome.jpg' )}}" class="img-fluid img-home" alt="Responsive image">
+        </div>
+        <div class="col-3">
+            <img src="{{asset('build/images/flamme2.png' )}}" class="img-fluid img-flame2" alt="Responsive image">
+        </div>
     </div>
-
-    <p>Since 1988, our passionate troupe has been working to offer
-        a show that you do not even suspect exists. If you are tired
-        of seeing the same shows, then this is the place for you.
-        Arsonists who will show you the depths of hell, ventriloquists who
-        do not need anyone to speak, cute clowns whose smile will fill you with joy,
-        magicians who make your children disappear for a quiet evening ...
-        You will understand, it is not a circus like the others.
-        Are you ready for the last attraction of your life?
-        Will you rise to this challenge? MOUUUHAHHAHAH !!!!</p>
+        <p class="block-text-home">Since 1988, our passionate troupe has been working to offer
+            a show that you do not even suspect exists. If you are tired
+            of seeing the same shows, then this is the place for you.
+            Arsonists who will show you the depths of hell, ventriloquists who
+            do not need anyone to speak, cute clowns whose smile will fill you with joy,
+            magicians who make your children disappear for a quiet evening ...
+            You will understand, it is not a circus like the others.
+            Are you ready for the last attraction of your life?
+            Will you rise to this challenge? MOUUUHAHHAHAH !!!!</p>
 
 {% endblock %}

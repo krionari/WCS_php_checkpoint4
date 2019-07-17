@@ -1,7 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
 
 
 body{
-    padding-top: 300px;
-    background-color: #7E655E;
+    background-image: url("../images/backgroundBody.jpg");
 }
+
+.padding-body{
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+
+p , h1 {
+    font-family: 'Henny Penny', cursive;
+}
+
+h1 {
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 4em;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.3em;
+    color: #171615
+}
+

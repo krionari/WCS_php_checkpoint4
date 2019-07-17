@@ -1,4 +1,13 @@
 nav{
-  height: 130px;
-background-image: url('../images/flame.jpg');
+background-image: url('../images/flame.png');
+}
+
+.logo{
+  max-height: 50px;
+  max-width: 70px;
+}
+
+nav a {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
 }
