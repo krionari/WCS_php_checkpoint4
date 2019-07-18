@@ -10,6 +10,10 @@
             <div class="col-12 col-md-6 mb-5">
                 <div class="card card-tour" style="width: 18rem;">
                     <div class="card-body">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('user_show', {'id': tour.id}) }}">show</a>
+                            <a href="{{ path('user_edit', {'id': tour.id}) }}">edit</a>
+                        {% endif %}
                         <h5 class="card-title card-title-tour ">{{ tour.date ? tour.date|date('Y-m-d') : '' }}</h5>
                         <h6 class="card-subtitle card-subtitle-tour mb-2 text-muted">{{ tour.city }}</h6>
                         <p class="card-text card-text-tour">{{ tour.adress }}</p>
@@ -18,5 +22,9 @@
             </div>
         {% endfor %}
     </div>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('user_new') }}">Create new</a>
+    {% endif %}
 
 {% endblock %}

@@ -29,12 +29,12 @@
                     <a class="nav-link" href="{{ path('artist_index') }}">Artists</a>
                 </li>
             {% endif %}
-            <li class="nav-item">
+            {#<li class="nav-item">
                 <a class="nav-link" href="{{ path('circus_index') }}">Circus</a>
             </li>
             <li class="nav-item vertical-line">
                 <a class="nav-link" href="#">booking</a>
-            </li>
+            </li>#}
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item vertical-line">
                     <a class="nav-link link-admin" style="color: #eacb6c" href="{{ path('tour_index') }}">Touring management</a>
