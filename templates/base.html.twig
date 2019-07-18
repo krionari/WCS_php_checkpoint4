@@ -11,16 +11,17 @@
 <body>
 
 {% include '_nav.html.twig' %}
-{% for category, messages in app.flashes %}
-    {% for message in messages %}
-        <div class="alert alert-{{ category }}">
-            {{ message }}
-        </div>
-    {% endfor %}
-{% endfor %}
 
 <div class="container-fluid padding-body">
-{% block body %}{% endblock %}
+    {% for category, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {% block body %}{% endblock %}
 </div>
 
 {% include '_footer.html.twig' %}

@@ -10,11 +10,12 @@
 .img-flame2 {
   height: 350px;
   width: 500px;
-  margin-left: -2%;
+  margin-left: -4%;
 }
 
 .block-image-home{
   margin-bottom: 50px;
+  margin-left: 60px;
 }
 
 .block-text-home{
@@ -53,6 +54,9 @@
   }
   .block-text-home{
     width: 100%;
+  }
+  .block-image-home{
+    margin-left: -15px;
   }
 }
 

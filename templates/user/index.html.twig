@@ -4,32 +4,33 @@
 
 {% block body %}
     <h1>Our magnificent artist troop</h1>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('user_new') }}">Create new</a>
+    {% endif %}
 
-        <div class="row ">
-            {% for artist in artists %}
-                <div class="card-artist col-12 col-md-6 mb-5">
-                    <div class="card card-article text-center">
-                        <div class="text-center">
-                            {% if is_granted('ROLE_ADMIN') %}
+    <div class="row ">
+        {% for artist in artists %}
+            <div class="card-artist col-12 col-md-6 mb-5">
+                <div class="card card-article text-center">
+                    <div class="text-center">
+                        <img src="{{asset('uploads/avatar/' ~ artist.urlavatar )}}" class="img-fluid img-cards-index" alt="Responsive image">
+                        {% if is_granted('ROLE_ADMIN') %}
                             <a href="{{ path('user_show', {'id': artist.id}) }}">show</a>
                             <a href="{{ path('user_edit', {'id': artist.id}) }}">edit</a>
-                            {% endif %}
-                            <img src="{{asset('uploads/avatar/' ~ artist.urlavatar )}}" class="img-fluid img-cards-index" alt="Responsive image">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title-artist">{{ artist.artistname }}</h5>
-                            <p class="card-text">{{ artist.description }}</p>
-                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title-artist">{{ artist.artistname }}</h5>
+                        <p class="card-text">{{ artist.description }}</p>
                     </div>
                 </div>
-            {% else %}
-                <tr>
-                    <td colspan="4">no records found</td>
-                </tr>
-            {% endfor %}
-        </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+    </div>
 
-    {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('user_new') }}">Create new</a>
-    {% endif %}
+
 {% endblock %}

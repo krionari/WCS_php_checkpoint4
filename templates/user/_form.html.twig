@@ -1,4 +1,7 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+{{ form_row(form.email, { 'attr': {'class': 'form-control'} }) }}
+{{ form_row(form.artist_name, { 'attr': {'class': 'form-control'} }) }}
+{{ form_row(form.job, { 'attr': {'class': 'form-control'} }) }}
+{{ form_row(form.description, { 'attr': {'class': 'form-control'} }) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

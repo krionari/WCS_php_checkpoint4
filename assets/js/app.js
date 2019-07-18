@@ -13,8 +13,8 @@ require('../css/nav.scss');
 require('../css/footer.scss');
 require('../css/home.scss');
 require('../css/login.scss');
-require('../css/form.scss');
 require('../css/tour.scss');
+require('../css/contact.scss');
 
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
