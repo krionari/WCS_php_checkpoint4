@@ -42,7 +42,7 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $message = (new \Swift_Message('New message from ' . $informations['name']))
+            $message = (new \Swift_Message('New message from ' . $informations['name'] . ' , ' . $informations['email']))
                 ->setFrom($informations['email'])
                 ->setTo('zboubilarge@gmail.com')
                 ->setBody($informations['message'])
