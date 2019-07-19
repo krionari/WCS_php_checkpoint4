@@ -24,8 +24,7 @@ class ContactController extends AbstractController
      */
     public function index(Request $request, \Swift_Mailer $mailer): Response
     {
-        $defaultData = ['message' => 'Type your message here'];
-        $form = $this->createFormBuilder($defaultData)
+        $form = $this->createFormBuilder()
             ->add('name', TextType::class, [
                 'attr' => ['class' => 'form-control'],
             ])

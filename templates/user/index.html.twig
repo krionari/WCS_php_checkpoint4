@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Our magnificent artist troop</h1>
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('user_new') }}">Create new</a>
+        <a class="btn btn-dark" href="{{ path('user_new') }}">Create new</a>
     {% endif %}
 
     <div class="row ">
@@ -15,8 +15,7 @@
                     <div class="text-center">
                         <img src="{{asset('uploads/avatar/' ~ artist.urlavatar )}}" class="img-fluid img-cards-index" alt="Responsive image">
                         {% if is_granted('ROLE_ADMIN') %}
-                            <a href="{{ path('user_show', {'id': artist.id}) }}">show</a>
-                            <a href="{{ path('user_edit', {'id': artist.id}) }}">edit</a>
+                            <a class="btn btn-dark" href="{{ path('user_edit', {'id': artist.id}) }}">edit</a>
                         {% endif %}
                     </div>
                     <div class="card-body">

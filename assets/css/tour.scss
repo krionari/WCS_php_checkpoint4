@@ -13,16 +13,13 @@
   text-align: center;
 }
 
-.card-tour {
-  background-color: #CF7A55;
+.table .thead-dark th {
+  background-color: #a94c23;
   border: 3px double #C52B3C;
-  border-radius: 29px;
-  min-width: 400px;
-
+  color: #b5a4a4;
 }
 
-@media screen and (max-width: 370px) {
-  .card-tour {
-    min-width: 30px;
-  }
+.table-bordered td {
+  background-color: #CF7A55;
+  border: 3px double #C52B3C;
 }

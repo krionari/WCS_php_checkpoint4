@@ -81,6 +81,10 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Your artist has been well created');
+
             return $this->redirectToRoute('user_index');
         }
 
@@ -132,6 +136,9 @@ class UserController extends AbstractController
                 $user->setUrlAvatar($newFilename);
             }
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash(
+                'success',
+                'Modification well taken into account');
 
             return $this->redirectToRoute('user_index');
         }
@@ -152,6 +159,9 @@ class UserController extends AbstractController
             $entityManager->remove($user);
             $entityManager->flush();
         }
+        $this->addFlash(
+            'danger',
+            'Artist deleted');
 
         return $this->redirectToRoute('user_index');
     }

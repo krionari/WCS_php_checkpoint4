@@ -39,6 +39,10 @@ class TourController extends AbstractController
             $entityManager->persist($tour);
             $entityManager->flush();
 
+            $this->addFlash(
+                'success',
+                'Your tour has been well created');
+
             return $this->redirectToRoute('tour_index');
         }
 
@@ -69,6 +73,10 @@ class TourController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Modification well taken into account');
+
             return $this->redirectToRoute('tour_index');
         }
 
@@ -88,7 +96,9 @@ class TourController extends AbstractController
             $entityManager->remove($tour);
             $entityManager->flush();
         }
-
+        $this->addFlash(
+            'danger',
+            'Tour deleted');
         return $this->redirectToRoute('tour_index');
     }
 }

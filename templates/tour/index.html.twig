@@ -3,29 +3,36 @@
 {% block title %}Tour index{% endblock %}
 
 {% block body %}
-    <h1>We pass near you?</h1>
+    <h1>Be careful, we may be right next to you</h1>
     {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('tour_new') }}">Create new</a>
+        <a class="btn btn-dark" href="{{ path('tour_new') }}">Create new</a>
     {% endif %}
 
-    <div class="row">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">City</th>
+            <th scope="col">Adress</th>
+            {% if is_granted('ROLE_ADMIN') %}
+            <th scope="col">Action</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
         {% for tour in tours %}
-            <div class="col-12 col-md-6 mb-5">
-                <div class="card card-tour" style="width: 18rem;">
-                    <div class="card-body">
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <a href="{{ path('tour_show', {'id': tour.id}) }}">show</a>
-                            <a href="{{ path('tour_edit', {'id': tour.id}) }}">edit</a>
-                        {% endif %}
-                        <h5 class="card-title card-title-tour ">{{ tour.date ? tour.date|date('Y-m-d') : '' }}</h5>
-                        <h6 class="card-subtitle card-subtitle-tour mb-2 text-muted">{{ tour.city }}</h6>
-                        <p class="card-text card-text-tour">{{ tour.adress }}</p>
-                    </div>
-                </div>
-            </div>
+        <tr>
+            <td>{{ tour.date ? tour.date|date('F jS l Y ') : '' }}</td>
+            <td>{{ tour.city }}</td>
+            <td>{{ tour.adress }}</td>
+            {% if is_granted('ROLE_ADMIN') %}
+            <td>
+                <a class="btn btn-dark" href="{{ path('tour_edit', {'id': tour.id}) }}">edit</a>
+            </td>
+            {% endif %}
+        </tr>
         {% endfor %}
-    </div>
-
-
+        </tbody>
+    </table>
 
 {% endblock %}
