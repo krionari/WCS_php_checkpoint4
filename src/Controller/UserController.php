@@ -56,7 +56,7 @@ class UserController extends AbstractController
 
                 $newFilename = $originalFilename.'-'.uniqid().'.'.$avatar->guessExtension();
 
-                // Move the file to the directory where brochures are stored
+                // Move the file to the directory where avatar are stored
                 try {
                     $avatar->move(
                         $this->getParameter('avatar_directory'),
